@@ -2,6 +2,8 @@ class Couple < ApplicationRecord
   belongs_to :boy, class_name: "Dancer"
   belongs_to :girl, class_name: "Dancer"
 
+  has_many :entries
+
   validates :boy_id,  presence: true
   validates :girl_id,  presence: true
   validate  :different_dancers
