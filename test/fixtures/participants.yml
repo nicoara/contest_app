@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  couple_id: 1
+  competition_id: 1
+  division_id: 1
+  agesection_id: 1
+
+two:
+  couple_id: 1
+  competition_id: 1
+  division_id: 1
+  agesection_id: 1

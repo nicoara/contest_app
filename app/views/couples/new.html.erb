@@ -1,0 +1,16 @@
+<h1>Add couple</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@couple) do |f| %>
+
+      <%= f.label :boy_id %>
+      <%= f.text_field :boy_id, class: 'form-control' %>
+
+      <%= f.label :girl_id %>
+      <%= f.text_field :girl_id, class: 'form-control' %>
+
+      <%= f.submit "Add couple", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

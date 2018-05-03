@@ -1,0 +1,2 @@
+class Agesection < ApplicationRecord
+end

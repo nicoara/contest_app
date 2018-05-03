@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+Benedetto:
+  name: Benedetto Ferruggia
+  country: Germany
+
+Claudia:
+  name: Claudia Koehler
+  country: Germany

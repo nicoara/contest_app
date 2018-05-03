@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @competition.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @competition.date %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @competition.country %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @competition.price %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @competition.currency %>
+</p>
+
+<p>
+  <strong>Maxcouplesonfloor:</strong>
+  <%= @competition.maxCouplesOnFloor %>
+</p>
+
+<%= link_to 'Edit', edit_competition_path(@competition) %> |
+<%= link_to 'Back', competitions_path %>
