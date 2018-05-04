@@ -1,0 +1,8 @@
+<%= render 'shared/header' %>
+
+</br>
+<%= @error %>
+
+<% @partners.each do |p| %>
+  <li><%= p.name %></li>
+<% end %>
