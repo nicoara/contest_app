@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AgesectionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @agesection = agesections(:one)
+    @agesection = agesections(:Adult)
   end
 
   test "should get index" do

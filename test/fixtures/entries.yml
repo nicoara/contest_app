@@ -2,9 +2,9 @@
 
 one:
   couple: BenedettoAndClaudia
-  competition_id: 1
-  division_id: 1
-  agesection_id: 1
+  competition: one
+  division: Professional
+  agesection: Adult
 
 two:
   couple_id: 1

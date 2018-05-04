@@ -1,8 +1,8 @@
 class Entry < ApplicationRecord
-  belongs_to :couple #, class_name: "Couple"
-  # belongs_to :competition, class_name: "Competition"
-  # belongs_to :division, class_name: "Division"
-  # belongs_to :agesection, class_name: "Agesection"
+  belongs_to :couple
+  belongs_to :competition
+  belongs_to :division
+  belongs_to :agesection
 
   validates :couple_id,  presence: true
   validates :competition_id,  presence: true

@@ -1,12 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  date: 2018-05-03
-  country: MyString
-  price: 1
-  currency: MyString
-  maxCouplesOnFloor: 1
+  name: World Open
+  date: 2018-03-25
+  country: Italy
+  price: 200
+  currency: euro
+  maxCouplesOnFloor: 7
 
 two:
   name: MyString
