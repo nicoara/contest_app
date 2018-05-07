@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "dancers#index"
 
+  get   '/query3',    to: 'data#query3'
   get   '/query2',    to: 'data#query2'
   get   '/query1',    to: 'data#query1'
   post  '/query1',    to: 'data#query1_post'
