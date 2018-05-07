@@ -26,6 +26,7 @@ class DataController < ApplicationController
         @partners = Dancer.where('id IN (?)', lstGirlIds)
       end
 
+
     end
   end
 
