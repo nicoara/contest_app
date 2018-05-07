@@ -1,5 +1,8 @@
 class DataController < ApplicationController
+
+
   def index
+    @query2_title = 'Couples with dancers from different countries'
   end
 
   def query1
@@ -24,6 +27,19 @@ class DataController < ApplicationController
       end
 
     end
+  end
+
+  def query2
+    @query2_title = 'Couples with dancers from different countries'
+    #it is simpler than making sql inner join statement
+    @lstCouples = []
+    Couple.find_each do |couple|
+      if Dancer.find(couple.boy_id) != Dancer.find(couple.girl_id)
+        @lstCouples.push(couple)
+      end
+    end
+
+    @lstCouples
   end
 
   private
