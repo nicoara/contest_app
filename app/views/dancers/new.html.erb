@@ -10,6 +10,12 @@
       <%= f.label :country %>
       <%= f.text_field :country, class: 'form-control' %>
 
+      <%= f.select :is_boy do %>
+        <% [['boy', true], ['girl', false]].each do |c| %>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
+      <% end %>
+
       <%= f.submit "Add dancer", class: "btn btn-primary" %>
     <% end %>
   </div>
