@@ -3,7 +3,7 @@ require 'test_helper'
 class CoupleTest < ActiveSupport::TestCase
   def setup
     @couple = Couple.new(boy: dancers(:Benedetto),
-                        girl_id: dancers(:Claudia).id)
+                        girl_id: dancers(:Alex).id)
   end
 
   test "should be valid" do
@@ -23,6 +23,13 @@ class CoupleTest < ActiveSupport::TestCase
   test "boy and girl should be different" do
     @couple.boy_id = @couple.girl_id
     assert_not @couple.valid?
+  end
+
+  test "should not have the same couple twice" do
+    @couple.save!
+
+    @couple2 = Couple.new(boy: @couple.boy, girl: @couple.girl)
+    assert_not @couple2.valid?
   end
 
 end
