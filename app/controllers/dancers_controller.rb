@@ -19,7 +19,7 @@ class DancersController < ApplicationController
   private
 
     def dancer_params
-      params.require(:dancer).permit(:name, :country)
+      params.require(:dancer).permit(:name, :country, :is_boy)
     end
 end
 

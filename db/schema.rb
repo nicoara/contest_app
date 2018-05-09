@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503150850) do
+ActiveRecord::Schema.define(version: 20180508161444) do
 
   create_table "agesections", force: :cascade do |t|
     t.string "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180503150850) do
     t.integer "girl_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["boy_id", "girl_id"], name: "index_couples_on_boy_id_and_girl_id", unique: true
   end
 
   create_table "dancers", force: :cascade do |t|
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 20180503150850) do
     t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_boy"
   end
 
   create_table "divisions", force: :cascade do |t|
