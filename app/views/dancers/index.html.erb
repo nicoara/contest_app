@@ -2,8 +2,9 @@
 
 <h1>All dancers</h1>
 
+<%= link_to "new dancer", new_dancer_path, class: "btn btn-lg btn-primary" %>
+
 <ul>
   <%= render @dancers %>
 </ul>
 
-<%= link_to "new dancer", new_dancer_path, class: "btn btn-lg btn-primary" %>
