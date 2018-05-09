@@ -34,7 +34,7 @@ class DataController < ApplicationController
 
     @lstCouples = []
     Couple.find_each do |couple|
-      if Dancer.find(couple.boy_id) != Dancer.find(couple.girl_id)
+      if Dancer.find(couple.boy_id).country != Dancer.find(couple.girl_id).country
         @lstCouples.push(couple)
       end
     end
