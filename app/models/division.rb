@@ -1,3 +1,5 @@
+# Class that shows the division in which a dancer activates
+# name examples: Professional, General
 class Division < ApplicationRecord
   has_many :entries
 
