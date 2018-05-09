@@ -4,13 +4,21 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@couple) do |f| %>
 
-      <%= f.label :boy_id %>
-      <%= f.text_field :boy_id, class: 'form-control' %>
-
-      <%= f.label :girl_id %>
-      <%= f.text_field :girl_id, class: 'form-control' %>
-
-      <%= f.submit "Add couple", class: "btn btn-primary" %>
+    <%= f.select :boy_id do %>
+      <% @lstBoys.each do |c| %>
+        <%= content_tag(:option, c.name, value: c.id) %>
+      <% end %>
     <% end %>
+
+    <%= f.select :girl_id do %>
+      <% @lstGirls.each do |c| %>
+        <%= content_tag(:option, c.name, value: c.id) %>
+      <% end %>
+    <% end %>
+
+    <%= f.submit "Add couple", class: "btn btn-primary" %>
+  <% end %>
+
+
   </div>
 </div>

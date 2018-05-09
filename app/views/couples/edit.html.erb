@@ -1,6 +1,23 @@
 <h1>Editing Couple</h1>
 
-<%= render 'form', couple: @couple %>
+<%= form_for(@couple) do |f| %>
+
+  <%= f.select :boy_id do %>
+    <% @lstBoys.each do |c| %>
+      <%= content_tag(:option, c.name, value: c.id,
+      selected: c.id == @couple.boy_id) %>
+    <% end %>
+  <% end %>
+
+  <%= f.select :girl_id do %>
+    <% @lstGirls.each do |c| %>
+      <%= content_tag(:option, c.name, value: c.id,
+      selected: c.id == @couple.girl_id) %>
+    <% end %>
+  <% end %>
+
+  <%= f.submit "Edit couple", class: "btn btn-primary" %>
+<% end %>
 
 <%= link_to 'Show', @couple %> |
 <%= link_to 'Back', couples_path %>

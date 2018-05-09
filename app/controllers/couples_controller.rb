@@ -13,10 +13,14 @@ class CouplesController < ApplicationController
 
   def new
     @couple = Couple.new
+    @lstBoys = Dancer.where(is_boy: true)
+    @lstGirls = Dancer.where(is_boy: false)
   end
 
   # GET /couples/1/edit
   def edit
+    @lstBoys = Dancer.where(is_boy: true)
+    @lstGirls = Dancer.where(is_boy: false)
   end
 
   def create
