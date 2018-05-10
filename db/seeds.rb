@@ -29,9 +29,13 @@ nr_couples.times do |n|
 end
 
 nr_couples.times do |n|
-  boy_id = prng.rand(nr_couples)
-  girl_id = prng.rand(nr_couples)
-  Couple.create(boy_id: boy_id, girl_id: girl_id)
+  lst_boyid = Dancer.where(is_boy: true).select(:id)
+  index_boy = prng.rand(lst_boyid.length)
+  lst_girlid = Dancer.where(is_boy: false).select(:id)
+  index_girl = prng.rand(lst_girlid.length)
+
+  Couple.create(boy_id: lst_boyid[index_boy].id,
+    girl_id: lst_girlid[index_girl].id)
 end
 
 20.times do |n|
@@ -42,7 +46,7 @@ end
   currency_index = prng.rand(lst_currencies.length)
   max_couples = 6 + prng.rand(6)
 
-  Competition.create(name: name,
+  Competition.create!(name: name,
     date: date,
     country: countries[country_id],
     price: price,
@@ -52,12 +56,12 @@ end
 
 100.times do |n|
 
-  couple_id = prng.rand(Couple.count)
-  competition_id = prng.rand(Competition.count)
-  division_id = prng.rand(Division.count)
-  agesection_id = prng.rand(Agesection.count)
+  couple_id = 1 + prng.rand(Couple.count)
+  competition_id = 1 + prng.rand(Competition.count)
+  division_id = 1 + prng.rand(Division.count)
+  agesection_id = 1 + prng.rand(Agesection.count)
 
-  Entry.create(couple_id: couple_id, competition_id: competition_id,
+  Entry.create!(couple_id: couple_id, competition_id: competition_id,
     division_id: division_id, agesection_id: agesection_id)
 end
 
