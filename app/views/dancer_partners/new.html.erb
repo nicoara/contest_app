@@ -1,0 +1,15 @@
+<%= render 'shared/header' %>
+
+<p>All partners of a dancer </p>
+
+<%= form_for @dancer_partner,
+    :url => { controller: 'dancer_partners', action: 'create' } do |f| %>
+
+  <%= f.select :id do %>
+    <% Dancer.all.each do |c| %>
+      <%= content_tag(:option, c.name, value: c.id) %>
+    <% end %>
+  <% end %>
+
+  <%= f.submit "Search", class: "btn btn-primary"%>
+<% end %>
