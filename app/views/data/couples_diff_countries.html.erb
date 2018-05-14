@@ -1,0 +1,22 @@
+<%= render 'shared/header' %>
+
+</br>
+</br>
+<%= @title %>
+</br>
+</br>
+
+<% @lstCouples.each do |c| %>
+  <li>
+    <% boy = Dancer.find(c.boy_id) %>
+    M:
+    <%= boy.name %>
+    -
+    <%= boy.country %>
+    , F:
+    <% girl = Dancer.find(c.girl_id) %>
+    <%= girl.name %>
+    -
+    <%= girl.country %>
+  </li>
+<% end %>

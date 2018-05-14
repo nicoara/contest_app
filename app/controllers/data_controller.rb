@@ -1,36 +1,12 @@
 class DataController < ApplicationController
 
   def index
-    @query2_title = 'Couples with dancers from different countries'
+    @couples_diff_countries_title = 'Couples with dancers from different countries'
     @query3_title = 'Dancers that have been in a couple with only one dancer'
   end
 
-  def query1
-    @dancername = ''
-    #debugger
-  end
-
-  def query1_post
-    #Benedetto Ferruggia
-    dancername = query1_params[:name]
-    dancer = Dancer.where(name: dancername)
-
-    if dancer.empty?
-      @error = 'no dancer found'
-    else
-      id = dancer[0].id
-      lstGirlIds = Couple.select('girl_id').where('boy_id IN (?)', id)
-      if lstGirlIds.empty?
-        @error = 'no partners'
-      else
-        @partners = Dancer.where('id IN (?)', lstGirlIds)
-      end
-
-    end
-  end
-
-  def query2
-    @query2_title = 'Couples with dancers from different countries'
+  def couples_diff_countries
+    @title = 'Couples with dancers from different countries'
 
     @lstCouples = []
     Couple.find_each do |couple|

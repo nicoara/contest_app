@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   resources :dancer_partners, only: [:new, :create, :show]
 
   get   '/query3',    to: 'data#query3'
-  get   '/query2',    to: 'data#query2'
-  get   '/query1',    to: 'data#query1'
-  post  '/query1',    to: 'data#query1_post'
+  get   '/couples_diff_countries',    to: 'data#couples_diff_countries'
   get   '/data',      to: 'data#index'
 
   resources :couples
