@@ -1,9 +1,14 @@
 <%= render 'shared/header' %>
 
 </br>
-<%= @query3_title %>
+<%= @title %>
 </br>
 
 <% @lstDancers.each do |d| %>
-  <li><%= d.id %></li>
+  <li>
+    <p>
+      id: <%= d.id %>
+    </p>
+  <%= d.name %>
+  </li>
 <% end %>

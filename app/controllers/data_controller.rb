@@ -2,7 +2,7 @@ class DataController < ApplicationController
 
   def index
     @couples_diff_countries_title = 'Couples with dancers from different countries'
-    @query3_title = 'Dancers that have been in a couple with only one dancer'
+    @dancers_in_one_couple_title = 'Dancers that have been in a couple with only one dancer'
   end
 
   def couples_diff_countries
@@ -18,8 +18,8 @@ class DataController < ApplicationController
     @lstCouples
   end
 
-  def query3
-    @query3_title = 'Dancers that have been in a couple with only one dancer'
+  def dancers_in_one_couple
+    @title = 'Dancers that have been in a couple with only one dancer'
 
     @lstDancers = []
     Dancer.find_each do |dancer|
