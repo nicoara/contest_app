@@ -8,6 +8,9 @@
 
 <% @lstCouples.each do |c| %>
   <li>
+    <p>
+        id: <%= c.id %>
+    </p>
     <% boy = Dancer.find(c.boy_id) %>
     M:
     <%= boy.name %>
