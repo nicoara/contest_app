@@ -2,7 +2,14 @@ require 'test_helper'
 
 class EntriesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @entry = entries(:one)
+    boy = create(:dancer, is_boy: true)
+    girl = create(:dancer, is_boy: false)
+    couple = create(:couple, boy_id: boy.id, girl_id: girl.id)
+    competition = create(:competition)
+    division = create(:division)
+    agesection = create(:agesection)
+    @entry = create(:entry, couple_id: couple.id, competition_id: competition.id,
+                      division_id: division.id, agesection_id: agesection.id)
   end
 
   test "should get index" do

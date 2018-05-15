@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CompetitionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @competition = competitions(:one)
+    @competition = create(:competition)
   end
 
   test "should get index" do

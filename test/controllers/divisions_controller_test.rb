@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DivisionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @division = divisions(:Professional)
+    @division = create(:division)
   end
 
   test "should get index" do

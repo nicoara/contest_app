@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DivisionTest < ActiveSupport::TestCase
   def setup
-    @division = Division.new(name: "adult")
+    @division = create(:division)
   end
 
   test "name should be present" do
