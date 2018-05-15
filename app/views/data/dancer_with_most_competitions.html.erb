@@ -1,0 +1,26 @@
+<%= render 'shared/header' %>
+
+</br>
+</br>
+<%= @title %>
+</br>
+</br>
+
+<% @dancers_most_entries.each do |dancer_id|%>
+  <p>
+    <%= Dancer.find(dancer_id).name %>
+  </p>
+  <p>
+    was in couples:
+    <% Couple.where(boy_id: dancer_id).each do |couple| %>
+      <%= couple.id%>
+    <% end %>
+    <% Couple.where(girl_id: dancer_id).each do |couple| %>
+      <%= couple.id%>
+    <% end %>
+  </p>
+  <p>
+    has <%= @nrentries_dancer[dancer_id] %> entries in competitions
+  </p>
+<% end %>
+
