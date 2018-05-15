@@ -9,7 +9,7 @@
 countries = ['Germany', 'Italy', 'Poland', 'Austria', 'Romania', 'Russia', 'Japan'];
 lst_currencies = ['USD', 'EUR', 'RON', 'YEN', 'SEK']
 prng = Random.new
-nr_couples = 100
+nr_couples = 5000
 
 
 Agesection.create!(name: 'Adult')
@@ -38,7 +38,7 @@ nr_couples.times do |n|
     girl_id: lst_girlid[index_girl].id)
 end
 
-20.times do |n|
+100.times do |n|
   name = Faker::Lorem.word + " Competition"
   date = Date.today + rand(365)
   country_id = prng.rand(countries.length)
@@ -54,15 +54,15 @@ end
     maxCouplesOnFloor: max_couples)
 end
 
-100.times do |n|
+nr_couples.times do |n|
 
   couple_id = 1 + prng.rand(Couple.count)
   competition_id = 1 + prng.rand(Competition.count)
   division_id = 1 + prng.rand(Division.count)
   agesection_id = 1 + prng.rand(Agesection.count)
 
-  Entry.create!(couple_id: couple_id, competition_id: competition_id,
-    division_id: division_id, agesection_id: agesection_id)
+  Entry.create(couple_id: couple_id, competition_id: competition_id,
+    division_id: division_id, agesection_id: agesection_id) #no bang bc may not pass uniqueness validation couple, competition
 end
 
 

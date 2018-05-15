@@ -23,8 +23,14 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create entry" do
+    competition2 = create(:competition, name: 'test_competition')
     assert_difference('Entry.count') do
-      post entries_url, params: { entry: { agesection_id: @entry.agesection_id, competition_id: @entry.competition_id, couple_id: @entry.couple_id, division_id: @entry.division_id } }
+      post entries_url, params: { entry:
+        { agesection_id: @entry.agesection_id,
+          competition_id: competition2.id,
+          couple_id: @entry.couple_id,
+          division_id: @entry.division_id
+        } }
     end
 
     assert_redirected_to entry_url(Entry.last)
