@@ -59,3 +59,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#railscast 368:
+gem 'rack-mini-profiler'
+
+#railscast 411:
+gem 'minitest', '5.10.3'
+gem 'rails-perftest'
+gem 'ruby-prof', group: :test
+gem 'test-unit', group: :test
