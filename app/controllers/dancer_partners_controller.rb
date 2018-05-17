@@ -1,12 +1,8 @@
 class DancerPartnersController < ApplicationController
 
   def show
-    @id = dancepartner_params[:id]
-    dancer = Dancer.find(@id)
-    lst_partnerid = dancer.is_boy == true ?
-      Couple.where(boy_id: @id).select(:girl_id) :
-      Couple.where(girl_id: @id).select(:boy_id)
-    @dancer_partners = Dancer.where('id IN (?)', lst_partnerid)
+    @id = dance_partner_params[:id]
+    @dancer_partners = DancerPartners.of(@id)
   end
 
   def new
