@@ -10,12 +10,13 @@ class DancerPartnersController < ApplicationController
   end
 
   def create
-    redirect_to dancer_partner_url id: dancepartner_params[:id]
+    redirect_to dancer_partner_url id: dance_partner_params[:id]
   end
 
     private
-      def dancepartner_params
+      def dance_partner_params
         params.permit(:id)
       end
 
 end
+

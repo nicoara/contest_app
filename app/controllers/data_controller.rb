@@ -50,7 +50,7 @@ class DataController < ApplicationController
   def dancer_with_most_competitions
     @title = 'Dancer with most competitions'
 
-    @nrentries_dancer = {}
+    @nr_entries_dancer = {}
     most_entries = 0
     @dancers_most_entries = []
 
@@ -59,15 +59,15 @@ class DataController < ApplicationController
       dancer_ids = [couple.boy_id, couple.girl_id]
 
       for id in dancer_ids
-        if @nrentries_dancer.key?(id)
-          @nrentries_dancer[id] += 1
+        if @nr_entries_dancer.key?(id)
+          @nr_entries_dancer[id] += 1
         else
-          @nrentries_dancer[id] = 1
+          @nr_entries_dancer[id] = 1
         end
 
-        if @nrentries_dancer[id] >= most_entries
+        if @nr_entries_dancer[id] >= most_entries
 
-          if  @nrentries_dancer[id] > most_entries
+          if  @nr_entries_dancer[id] > most_entries
             @dancers_most_entries = [id]
           else
             @dancers_most_entries.push(id)
