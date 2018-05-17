@@ -10,52 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180508161444) do
+ActiveRecord::Schema.define(version: 20180517132203) do
 
   create_table "agesections", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "competitions", force: :cascade do |t|
-    t.string "name"
-    t.date "date"
-    t.string "country"
-    t.integer "price"
-    t.string "currency"
-    t.integer "maxCouplesOnFloor"
+    t.string "name", null: false
+    t.date "date", null: false
+    t.string "country", null: false
+    t.integer "price", null: false
+    t.string "currency", null: false
+    t.integer "maxCouplesOnFloor", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "couples", force: :cascade do |t|
-    t.integer "boy_id"
-    t.integer "girl_id"
+    t.integer "boy_id", null: false
+    t.integer "girl_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["boy_id", "girl_id"], name: "index_couples_on_boy_id_and_girl_id", unique: true
   end
 
   create_table "dancers", force: :cascade do |t|
-    t.string "name"
-    t.string "country"
+    t.string "name", null: false
+    t.string "country", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_boy"
   end
 
   create_table "divisions", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "entries", force: :cascade do |t|
-    t.integer "couple_id"
-    t.integer "competition_id"
-    t.integer "division_id"
-    t.integer "agesection_id"
+    t.integer "couple_id", null: false
+    t.integer "competition_id", null: false
+    t.integer "division_id", null: false
+    t.integer "agesection_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
