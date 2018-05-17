@@ -18,7 +18,7 @@ FactoryBot.define do
     country   'Italy'
     price     200
     currency  'eur'
-    maxCouplesOnFloor   7
+    max_couples_on_floor   7
   end
 
   factory :division do

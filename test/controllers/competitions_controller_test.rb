@@ -17,7 +17,7 @@ class CompetitionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create competition" do
     assert_difference('Competition.count') do
-      post competitions_url, params: { competition: { country: @competition.country, currency: @competition.currency, date: @competition.date, maxCouplesOnFloor: @competition.maxCouplesOnFloor, name: @competition.name, price: @competition.price } }
+      post competitions_url, params: { competition: { country: @competition.country, currency: @competition.currency, date: @competition.date, max_couples_on_floor: @competition.max_couples_on_floor, name: @competition.name, price: @competition.price } }
     end
 
     assert_redirected_to competition_url(Competition.last)
@@ -34,7 +34,7 @@ class CompetitionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update competition" do
-    patch competition_url(@competition), params: { competition: { country: @competition.country, currency: @competition.currency, date: @competition.date, maxCouplesOnFloor: @competition.maxCouplesOnFloor, name: @competition.name, price: @competition.price } }
+    patch competition_url(@competition), params: { competition: { country: @competition.country, currency: @competition.currency, date: @competition.date, max_couples_on_floor: @competition.max_couples_on_floor, name: @competition.name, price: @competition.price } }
     assert_redirected_to competition_url(@competition)
   end
 

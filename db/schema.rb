@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180517132203) do
+ActiveRecord::Schema.define(version: 20180517141120) do
 
   create_table "agesections", force: :cascade do |t|
     t.string "name", null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20180517132203) do
     t.string "country", null: false
     t.integer "price", null: false
     t.string "currency", null: false
-    t.integer "maxCouplesOnFloor", null: false
+    t.integer "max_couples_on_floor", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
