@@ -1,16 +1,7 @@
 <%= form_with(model: couple) do |f| %>
 
-  <%= f.select :boy_id do %>
-    <% @boys.each do |boy| %>
-      <%= content_tag(:option, boy.name, value: boy.id, selected: boy.id == @couple.boy_id) %>
-    <% end %>
-  <% end %>
-
-  <%= f.select :girl_id do %>
-    <% @girls.each do |girl| %>
-      <%= content_tag(:option, girl.name, value: girl.id, selected: girl.id == @couple.girl_id) %>
-    <% end %>
-  <% end %>
+  <%= render partial: 'select_dancer', locals: {f: f, field: :boy_id, list: @boys, selected_id: @couple.boy_id} %>
+  <%= render partial: 'select_dancer', locals: {f: f, field: :girl_id, list: @girls, selected_id: @couple.girl_id} %>
 
 <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>

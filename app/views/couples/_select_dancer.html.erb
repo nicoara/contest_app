@@ -1,0 +1,5 @@
+<%= f.select field do %>
+  <% list.each do |dancer| %>
+    <%= content_tag(:option, dancer.name, value: dancer.id, selected: dancer.id == selected_id) %>
+  <% end %>
+<% end %>
