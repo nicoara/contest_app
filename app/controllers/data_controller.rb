@@ -1,9 +1,6 @@
 class DataController < ApplicationController
 
   def index
-    @couples_diff_countries_title = 'Couples with dancers from different countries'
-    @dancers_in_one_couple_title = 'Dancers that have been in a couple with only one dancer'
-    @dancer_with_most_competitions_title = 'Dancer with most competitions'
   end
 
    def couples_diff_countries
