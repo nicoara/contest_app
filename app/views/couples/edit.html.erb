@@ -1,22 +1,6 @@
 <h1>Editing Couple</h1>
 
-<%= form_for(@couple) do |f| %>
-
-  <%= f.select :boy_id do %>
-    <% @boys.each do |boy| %>
-      <%= content_tag(:option, boy.name, value: boy.id,
-      selected: boy.id == @couple.boy_id) %>
-    <% end %>
-  <% end %>
-
-  <%= f.select :girl_id do %>
-    <% @girls.each do |girl| %>
-      <%= content_tag(:option, girl.name, value: girl.id, selected: girl.id == @couple.girl_id) %>
-    <% end %>
-  <% end %>
-
-  <%= f.submit "Edit couple", class: "btn btn-primary" %>
-<% end %>
+<%= render 'form', couple: @couple %>
 
 <%= link_to 'Show', @couple %> |
 <%= link_to 'Back', couples_path %>

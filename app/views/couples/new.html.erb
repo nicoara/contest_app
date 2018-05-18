@@ -3,28 +3,9 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <% if(@boys.length > 0 && @girls.length > 0) %>
-      <%= form_for(@couple) do |f| %>
-
-      <%= f.select :boy_id do %>
-        <% @boys.each do |boy| %>
-          <%= content_tag(:option, boy.name, value: boy.id) %>
-        <% end %>
-      <% end %>
-
-      <%= f.select :girl_id do %>
-        <% @girls.each do |girl| %>
-          <%= content_tag(:option, girl.name, value: girl.id) %>
-        <% end %>
-      <% end %>
-
-      <%= f.submit "Add couple", class: "btn btn-primary" %>
-    <% end %>
+      <%= render 'form', couple: @couple %>
   <% else %>
     <p> You need at least one boy and one girl in the database to create a couple </p>
   <% end %>
-
-
-
-
   </div>
 </div>
