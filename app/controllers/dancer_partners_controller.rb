@@ -7,6 +7,7 @@ class DancerPartnersController < ApplicationController
 
   def new
     @dancer_partner = ''
+    @dancers = Dancer.select(:id, :name).all
   end
 
   def create
