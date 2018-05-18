@@ -4,10 +4,10 @@ one:
   couple: BenedettoAndClaudia
   competition: one
   division: Professional
-  agesection: Adult
+  age_section: Adult
 
 two:
   couple_id: 1
   competition_id: 1
   division_id: 1
-  agesection_id: 1
+  age_section_id: 1

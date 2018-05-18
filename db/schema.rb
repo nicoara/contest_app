@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180517141120) do
+ActiveRecord::Schema.define(version: 20180518133428) do
 
-  create_table "agesections", force: :cascade do |t|
+  create_table "age_sections", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20180517141120) do
     t.integer "couple_id", null: false
     t.integer "competition_id", null: false
     t.integer "division_id", null: false
-    t.integer "agesection_id", null: false
+    t.integer "age_section_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

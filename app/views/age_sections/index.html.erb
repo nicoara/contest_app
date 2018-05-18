@@ -1,0 +1,29 @@
+<%= render 'shared/header' %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Age sections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @age_sections.each do |age_section| %>
+      <tr>
+        <td><%= age_section.name %></td>
+        <td><%= link_to 'Show', age_section %></td>
+        <td><%= link_to 'Edit', edit_age_section_path(age_section) %></td>
+        <td><%= link_to 'Destroy', age_section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Age section', new_age_section_path %>

@@ -25,7 +25,7 @@ FactoryBot.define do
     name    'Professional'
   end
 
-  factory :agesection do
+  factory :age_section do
     name    'Adult'
   end
 
@@ -33,7 +33,7 @@ FactoryBot.define do
     association :couple_id, factory: :couple, id: 1
     association :competition_id, factory: :competition, id: 1
     association :division_id, factory: :division, id: 1
-    association :agesection_id, factory: :agesection, id: 1
+    association :age_section_id, factory: :age_section, id: 1
   end
 end
 

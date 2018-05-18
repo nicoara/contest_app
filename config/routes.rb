@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resources :entries
   resources :participants
   resources :competitions
-  resources :agesections
+  resources :age_sections
   resources :divisions
 end
