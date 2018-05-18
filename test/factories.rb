@@ -14,7 +14,7 @@ FactoryBot.define do
 
   factory :competition do
     name      'World Open'
-    date      2018-03-25
+    date      { 2.years.ago }
     country   'Italy'
     price     200
     currency  'eur'
