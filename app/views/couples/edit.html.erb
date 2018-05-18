@@ -3,16 +3,15 @@
 <%= form_for(@couple) do |f| %>
 
   <%= f.select :boy_id do %>
-    <% @lstBoys.each do |c| %>
-      <%= content_tag(:option, c.name, value: c.id,
-      selected: c.id == @couple.boy_id) %>
+    <% @boys.each do |boy| %>
+      <%= content_tag(:option, boy.name, value: boy.id,
+      selected: boy.id == @couple.boy_id) %>
     <% end %>
   <% end %>
 
   <%= f.select :girl_id do %>
-    <% @lstGirls.each do |c| %>
-      <%= content_tag(:option, c.name, value: c.id,
-      selected: c.id == @couple.girl_id) %>
+    <% @girls.each do |girl| %>
+      <%= content_tag(:option, girl.name, value: girl.id, selected: girl.id == @couple.girl_id) %>
     <% end %>
   <% end %>
 

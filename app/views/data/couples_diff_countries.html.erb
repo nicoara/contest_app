@@ -6,10 +6,10 @@
 </br>
 </br>
 
-<% @lst_couples.each do |c| %>
+<% @lst_couples.each do |couple| %>
   <li>
     <p>
-        id: <%= c.id %>
+        id: <%= couple.id %>
     </p>
     <% boy = Dancer.find(c.boy_id) %>
     M:

@@ -2,18 +2,18 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <% if(@lstBoys.length > 0 && @lstGirls.length > 0) %>
+    <% if(@boys.length > 0 && @girls.length > 0) %>
       <%= form_for(@couple) do |f| %>
 
       <%= f.select :boy_id do %>
-        <% @lstBoys.each do |c| %>
-          <%= content_tag(:option, c.name, value: c.id) %>
+        <% @boys.each do |boy| %>
+          <%= content_tag(:option, boy.name, value: boy.id) %>
         <% end %>
       <% end %>
 
       <%= f.select :girl_id do %>
-        <% @lstGirls.each do |c| %>
-          <%= content_tag(:option, c.name, value: c.id) %>
+        <% @girls.each do |girl| %>
+          <%= content_tag(:option, girl.name, value: girl.id) %>
         <% end %>
       <% end %>
 

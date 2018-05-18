@@ -6,8 +6,8 @@
     :url => { controller: 'dancer_partners', action: 'create' } do |f| %>
 
   <%= f.select :id do %>
-    <% Dancer.all.each do |c| %>
-      <%= content_tag(:option, c.name, value: c.id) %>
+    <% Dancer.select(:id, :name).all.each do |dancer| %>
+      <%= content_tag(:option, dancer.name, value: dancer.id) %>
     <% end %>
   <% end %>
 
