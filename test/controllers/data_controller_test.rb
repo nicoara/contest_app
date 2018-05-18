@@ -10,14 +10,14 @@ class DataControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show correct couple on query couple diff countries" do
-    get couples_diff_countries_url
+    get international_couples_url
     assert_response :success
     text = "id: #{@couple_italy.id}"
     assert_select 'p', text
   end
 
   test "should not show incorrect couple on query couple diff countries" do
-    get couples_diff_countries_url
+    get international_couples_url
     assert_response :success
     text = "id: #{@couple_germany.id}"
     assert_select "p", text: text, count: 0

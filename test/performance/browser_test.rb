@@ -7,6 +7,6 @@ class BrowsingTest < ActionDispatch::PerformanceTest
                            :output => 'tmp/performance', :formats => [:flat] }
 
   def test_homepage
-    get couples_diff_countries_url
+    get international_couples_url
   end
 end

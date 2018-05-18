@@ -1,0 +1,15 @@
+<%= render 'shared/header' %>
+
+</br>
+</br>
+<%= @title %>
+</br>
+</br>
+
+<% @lst_couples.each do |couple| %>
+  <li>
+    <p>
+        id: <%= couple.id %>
+    </p>
+  </li>
+<% end %>
