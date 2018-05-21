@@ -3,7 +3,6 @@ class DataController < ApplicationController
   def index
   end
 
-
   def dancers_in_one_couple
     @title = 'Dancers that have been in a couple with only one dancer'
 
@@ -45,7 +44,7 @@ class DataController < ApplicationController
             @dancers_most_entries.push(id)
           end
 
-          most_entries = @nrentries_dancer[id]
+          most_entries = @nr_entries_dancer[id]
         end
       end
     end

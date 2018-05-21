@@ -1,7 +1,7 @@
 <li>
-  M:
-  <%= Dancer.find(couple.boy_id).name %>
-  , F:
-  <%= Dancer.find(couple.girl_id).name %>
+  <p>
+    id: <%= couple.id %>
+  </p>
+
   <td><%= link_to 'Edit', edit_couple_path(couple) %></td>
 </li>
