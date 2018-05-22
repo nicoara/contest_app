@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class InternationalCouplesControllerTest < ActionDispatch::IntegrationTest
+class DevotedDancersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @boy_germany = create(:dancer, name: 'Jurgen Klopp', country: 'Germany', is_boy: true)
     @girl_germany = create(:dancer, name: 'Angela Merkel', country: 'Germany', is_boy: false)
@@ -9,17 +9,17 @@ class InternationalCouplesControllerTest < ActionDispatch::IntegrationTest
     @couple_same_country = create(:couple, boy_id: @boy_germany.id, girl_id: @girl_germany.id)
   end
 
-  test "should show correct couple on query couple diff countries" do
-    get international_couples_url
+  test "should show correct dancer on query dancer in one couple" do
+    get devoted_dancers_url
     assert_response :success
-    text = "id: #{@couple_diff_country.id}"
+    text = "id: #{@girl_germany.id}"
     assert_select 'p', text
   end
 
-  test "should not show incorrect couple on query couple diff countries" do
-    get international_couples_url
+  test "should not show incorrect dancer on query dancer in one couple" do
+    get devoted_dancers_url
     assert_response :success
-    text = "id: #{@couple_same_country.id}"
-    assert_select "p", text: text, count: 0
+    text = "id: #{@boy_germany.id}"
+    assert_select 'p', text: text, count: 0
   end
 end
