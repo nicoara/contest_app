@@ -4,11 +4,22 @@ FactoryBot.define do
     name 'Benedetto'
     country 'Germany'
     is_boy  true
+
+    trait :boy do
+      is_boy true
+    end
+
+    trait :girl do
+      is_boy false
+    end
+
+    factory :boy,   traits: [:boy]
+    factory :girl,  traits: [:girl]
   end
 
   factory :couple do
-    association :boy_id, factory: :dancer, id: 1
-    association :girl_id, factory: :dancer, id: 2
+    association :boy_id, factory: :dancer
+    association :girl_id, factory: :dancer
   end
 
   factory :competition do

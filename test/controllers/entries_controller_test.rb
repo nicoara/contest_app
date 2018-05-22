@@ -2,8 +2,8 @@ require 'test_helper'
 
 class EntriesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    boy = create(:dancer, is_boy: true)
-    girl = create(:dancer, is_boy: false)
+    boy = create(:boy)
+    girl = create(:girl)
     couple = create(:couple, boy_id: boy.id, girl_id: girl.id)
     competition = create(:competition)
     division = create(:division)

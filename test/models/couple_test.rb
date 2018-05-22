@@ -2,8 +2,8 @@ require 'test_helper'
 
 class CoupleTest < ActiveSupport::TestCase
   def setup
-    @couple = create(:couple, boy_id: create(:dancer, is_boy: true).id,
-                        girl_id: create(:dancer, is_boy: false).id)
+    @couple = create(:couple, boy_id: create(:boy).id,
+                        girl_id: create(:girl).id)
   end
 
   test "should be valid" do

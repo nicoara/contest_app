@@ -2,9 +2,9 @@ require 'test_helper'
 
 class DancerMostCompetitionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @boy_germany = create(:dancer, name: 'Jurgen Klopp', country: 'Germany', is_boy: true)
-    @girl_germany = create(:dancer, name: 'Angela Merkel', country: 'Germany', is_boy: false)
-    girl_italy = create(:dancer, name: 'Alessandra Elati', country: 'Italy', is_boy: false)
+    @boy_germany = create(:boy, name: 'Jurgen Klopp', country: 'Germany')
+    @girl_germany = create(:girl, name: 'Angela Merkel', country: 'Germany')
+    girl_italy = create(:girl, name: 'Alessandra Elati', country: 'Italy')
     couple_diff_country = create(:couple, boy_id: @boy_germany.id, girl_id: girl_italy.id)
     couple_same_country = create(:couple, boy_id: @boy_germany.id, girl_id: @girl_germany.id)
 
