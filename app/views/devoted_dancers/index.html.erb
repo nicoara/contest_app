@@ -1,7 +1,9 @@
 <%= render 'shared/header' %>
 
 </br>
-<%= @title %>
+<p>
+ Dancers that have been in a couple with only one dancer
+</p>
 </br>
 
 <% @lst_dancers.each do |dancer| %>
@@ -9,6 +11,5 @@
     <p>
       id: <%= dancer.id %>
     </p>
-  <%= dancer.name %>
   </li>
 <% end %>

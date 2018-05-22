@@ -3,22 +3,6 @@ class DataController < ApplicationController
   def index
   end
 
-
-  def dancers_in_one_couple
-    @title = 'Dancers that have been in a couple with only one dancer'
-
-    @lst_dancers = []
-    Dancer.find_each do |dancer|
-      nr_pairs_as_boy = Couple.where(boy_id: dancer.id).length
-      nr_pairs_as_girl = Couple.where(girl_id: dancer.id).length
-      if (nr_pairs_as_boy + nr_pairs_as_girl == 1)
-        @lst_dancers.push(dancer)
-      end
-    end
-
-    @lst_dancers
-  end
-
   def dancer_with_most_competitions
     @title = 'Dancer with most competitions'
 
@@ -45,7 +29,7 @@ class DataController < ApplicationController
             @dancers_most_entries.push(id)
           end
 
-          most_entries = @nrentries_dancer[id]
+          most_entries = @nr_entries_dancer[id]
         end
       end
     end

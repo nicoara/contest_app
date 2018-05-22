@@ -24,14 +24,14 @@ class DataControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show correct dancer on query dancer in one couple" do
-    get dancers_in_one_couple_url
+    get devoted_dancers_url
     assert_response :success
     text = "id: #{@girl_germany.id}"
     assert_select 'p', text
   end
 
   test "should not show incorrect dancer on query dancer in one couple" do
-    get dancers_in_one_couple_url
+    get devoted_dancers_url
     assert_response :success
     text = "id: #{@boy_germany.id}"
     assert_select 'p', text: text, count: 0
