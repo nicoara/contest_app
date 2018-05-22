@@ -4,7 +4,9 @@ class DancerMostCompetitionsController < ApplicationController
       .joins(:entries).group('boy_id').order('total DESC')
     girls = Couple.select("couples.girl_id as id, count(couples.girl_id) as total")
       .joins(:entries).group('girl_id').order('total DESC')
-    @max_entries = boys.first.total > girls.first.total ? boys.first.total : girls.first.total
+
+    @max_entries = boys.length > 0 ? boys.first.total : 0
+    @max_entries = girls.length > 0 && girls.first.total > @max_entries ? girls.first.total : @max_entries
 
     @dancers_most_entries = []
     dancers = [boys, girls]

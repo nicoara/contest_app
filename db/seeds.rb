@@ -11,6 +11,7 @@ lst_currencies = ['USD', 'EUR', 'RON', 'YEN', 'SEK']
 prng = Random.new
 nr_couples = 5000
 
+puts Time.now
 
 Agesection.create!(name: 'Adult')
 Agesection.create!(name: 'Youth')
@@ -21,12 +22,20 @@ Agesection.create!(name: 'Senior III')
 Division.create!(name: 'General')
 Division.create!(name: 'Professional')
 
+puts 'started adding Dancers'
+
 nr_couples.times do |n|
   country_id = prng.rand(countries.length)
   name = Faker::Name.unique.name
   gender = prng.rand(2) == 0 ? true : false
   Dancer.create!(name: name, country: countries[country_id], is_boy: gender)
+  if (Dancer.count % 300 == 0)
+    puts "#{Dancer.count} dancers"
+  end
 end
+
+puts 'ended adding Dancers'
+puts Time.now
 
 nr_couples.times do |n|
   lst_boyid = Dancer.where(is_boy: true).select(:id)
@@ -36,7 +45,14 @@ nr_couples.times do |n|
 
   Couple.create(boy_id: lst_boyid[index_boy].id,
     girl_id: lst_girlid[index_girl].id)
+
+  if (Couple.count % 300 == 0)
+    puts "#{Couple.count} couples"
+  end
 end
+
+puts 'ended adding Couples'
+puts Time.now
 
 100.times do |n|
   name = Faker::Lorem.word + " Competition"
@@ -51,18 +67,27 @@ end
     country: countries[country_id],
     price: price,
     currency: lst_currencies[currency_index],
-    maxCouplesOnFloor: max_couples)
+    max_couples_on_floor: max_couples)
 end
+
+puts 'ended adding Competitions'
+puts Time.now
 
 nr_couples.times do |n|
 
   couple_id = 1 + prng.rand(Couple.count)
   competition_id = 1 + prng.rand(Competition.count)
   division_id = 1 + prng.rand(Division.count)
-  agesection_id = 1 + prng.rand(Agesection.count)
+  age_section_id = 1 + prng.rand(Agesection.count)
 
   Entry.create(couple_id: couple_id, competition_id: competition_id,
-    division_id: division_id, agesection_id: agesection_id) #no bang bc may not pass uniqueness validation couple, competition
+    division_id: division_id, age_section_id: age_section_id) #no bang bc may not pass uniqueness validation couple, competition
+
+  if (Entry.count % 300 == 0)
+    puts "#{Entry.count} entries"
+  end
 end
 
+puts 'ended adding Entries'
+puts Time.now
 

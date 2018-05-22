@@ -2,7 +2,6 @@ require 'test_helper'
 
 class CouplesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @couple_test = couples(:BenedettoAndClaudia)
   end
 
   test "should get index" do
