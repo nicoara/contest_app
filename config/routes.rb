@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :dancer_partners, only: [:new, :create, :show]
   resources :international_couples, only: [:index]
   resources :devoted_dancers, only: [:index]
+  resources :dancer_most_competitions, only: [:index]
 
   get   '/data',      to: 'data#index'
-  get   '/dancer_with_most_competitions', to: 'data#dancer_with_most_competitions'
 
   resources :couples
   resources :dancers
