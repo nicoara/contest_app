@@ -1,0 +1,15 @@
+<%= render 'shared/header' %>
+
+</br>
+</br>
+<p>Dancer with most divisions</p>
+</br>
+
+<p>most number of divisions: <%= @max_divisions %> </p>
+<p>dancers:</p>
+<% @dancers_most_divisions.each do |dancer_id|%>
+  <p>
+      id: <%= dancer_id %>
+  </p>
+<% end %>
+
