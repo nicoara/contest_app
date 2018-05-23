@@ -1,0 +1,11 @@
+<%= render 'shared/header' %>
+
+</br>
+</br>
+<p>Average yearly competitions per couple </p>
+</br>
+
+<% @couple_avg_yearly_competitions.each do |couple_id, avg_nr_competitions|%>
+  <p>id: <%= couple_id %>, avg: <%= avg_nr_competitions %></p>
+<% end %>
+
