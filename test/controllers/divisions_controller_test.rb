@@ -24,6 +24,11 @@ class DivisionsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to division_url(Division.last)
   end
 
+  test "should not create division with same ranking" do
+    assert_no_difference('Division.count') do
+      post divisions_url, params: { division: { name: @division.name, ranking: @division.ranking } }
+    end
+  end
 
   test "should show division" do
     get division_url(@division)
