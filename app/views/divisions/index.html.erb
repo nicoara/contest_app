@@ -8,6 +8,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Ranking</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
     <% @divisions.each do |division| %>
       <tr>
         <td><%= division.name %></td>
+        <td><%= division.ranking %></td>
         <td><%= link_to 'Show', division %></td>
         <td><%= link_to 'Edit', edit_division_path(division) %></td>
         <td><%= link_to 'Destroy', division, method: :delete, data: { confirm: 'Are you sure?' } %></td>
