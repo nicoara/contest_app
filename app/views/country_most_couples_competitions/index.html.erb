@@ -1,0 +1,14 @@
+<%= render 'shared/header' %>
+
+</br>
+</br>
+<p>Country with most couples at competitions </p>
+</br>
+
+<% if defined? @country %>
+  <p>Country: <%= @country %></p>
+  <p>has <%= @nr_dancers %> dancers </p>
+<% end %>
+
+
+
