@@ -1,0 +1,11 @@
+<%= render 'shared/header' %>
+
+</br>
+</br>
+<p>Competition with most earnings</p>
+</br>
+
+<% if defined? @competition_id %>
+  <p>Competition id: <%= @competition_id %></p>
+  <p>has earnings of <%= @earnings %> </p>
+<% end %>
