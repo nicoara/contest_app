@@ -13,11 +13,11 @@ nr_couples = 5000
 
 puts Time.now
 
-Agesection.create!(name: 'Adult')
-Agesection.create!(name: 'Youth')
-Agesection.create!(name: 'Senior I')
-Agesection.create!(name: 'Senior II')
-Agesection.create!(name: 'Senior III')
+AgeSection.create!(name: 'Adult')
+AgeSection.create!(name: 'Youth')
+AgeSection.create!(name: 'Senior I')
+AgeSection.create!(name: 'Senior II')
+AgeSection.create!(name: 'Senior III')
 
 Division.create!(name: 'General')
 Division.create!(name: 'Professional')
@@ -78,7 +78,7 @@ nr_couples.times do |n|
   couple_id = 1 + prng.rand(Couple.count)
   competition_id = 1 + prng.rand(Competition.count)
   division_id = 1 + prng.rand(Division.count)
-  age_section_id = 1 + prng.rand(Agesection.count)
+  age_section_id = 1 + prng.rand(AgeSection.count)
 
   Entry.create(couple_id: couple_id, competition_id: competition_id,
     division_id: division_id, age_section_id: age_section_id) #no bang bc may not pass uniqueness validation couple, competition
