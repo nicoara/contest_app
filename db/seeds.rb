@@ -19,8 +19,10 @@ AgeSection.create!(name: 'Senior I')
 AgeSection.create!(name: 'Senior II')
 AgeSection.create!(name: 'Senior III')
 
-Division.create!(name: 'General')
-Division.create!(name: 'Professional')
+Division.create!(name: 'Amateur', ranking: 1)
+Division.create!(name: 'General', ranking: 2)
+Division.create!(name: 'Professional', ranking: 3)
+Division.create!(name: 'Performance', ranking: 4)
 
 puts 'started adding Dancers'
 
