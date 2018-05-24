@@ -9,8 +9,8 @@ class DancerMostDivisionsControllerTest < ActionDispatch::IntegrationTest
     couple_same_country = create(:couple, boy_id: @boy_germany.id, girl_id: @girl_germany.id)
 
     competition = create(:competition)
-    division = create(:division)
-    division_2 = create(:division)
+    division = create(:division, ranking: 1)
+    division_2 = create(:division, ranking: 2)
     age_section = create(:age_section)
     entry = create(:entry, couple_id: couple_diff_country.id, competition_id: competition.id,
                       division_id: division.id, age_section_id: age_section.id)

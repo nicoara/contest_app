@@ -2,7 +2,8 @@ require 'test_helper'
 
 class DivisionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @division = create(:division)
+    @division = create(:division, ranking: 1)
+    @division_higher = create(:division, ranking: 2)
   end
 
   test "should get index" do
@@ -17,11 +18,12 @@ class DivisionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create division" do
     assert_difference('Division.count') do
-      post divisions_url, params: { division: { name: @division.name } }
+      post divisions_url, params: { division: { name: @division.name, ranking: 0 } }
     end
 
     assert_redirected_to division_url(Division.last)
   end
+
 
   test "should show division" do
     get division_url(@division)

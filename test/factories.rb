@@ -33,6 +33,7 @@ FactoryBot.define do
 
   factory :division do
     name    'Professional'
+    ranking  1
   end
 
   factory :age_section do
