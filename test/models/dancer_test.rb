@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DancerTest < ActiveSupport::TestCase
   def setup
-    @dancer = Dancer.new(name: "Claudia Koehler", country: "Germany")
+    @dancer = create(:dancer, name: "Claudia Koehler", country: "Germany")
   end
 
   test "name should be present" do
