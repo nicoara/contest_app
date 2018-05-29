@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :devoted_dancers, only: [:index]
   resources :dancers_most_competitions, only: [:index]
   resources :dancer_most_divisions, only: [:index]
-  resources :dancer_most_age_sections, only: [:index]
+  resources :dancers_most_age_sections, only: [:index]
   resources :avg_yearly_couple_competitions, only: [:index]
   resources :country_most_couples_competitions, only: [:index]
   resources :competition_most_earnings, only: [:index]
