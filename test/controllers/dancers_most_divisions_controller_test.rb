@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DancerMostDivisionsControllerTest < ActionDispatch::IntegrationTest
+class DancersMostDivisionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @boy_germany = create(:boy, name: 'Jurgen Klopp', country: 'Germany')
     @girl_germany = create(:girl, name: 'Angela Merkel', country: 'Germany')
@@ -19,14 +19,14 @@ class DancerMostDivisionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show correct dancer with most divisions" do
-    get dancer_most_divisions_url
+    get dancers_most_divisions_url
     assert_response :success
     text = "id: #{@boy_germany.id}"
     assert_select 'p', text: text, count: 1
   end
 
   test "should not show incorrect dancer with most divisions" do
-    get dancer_most_divisions_url
+    get dancers_most_divisions_url
     assert_response :success
     text = "id: #{@girl_germany.id}"
     assert_select 'p', text: text , count: 0
