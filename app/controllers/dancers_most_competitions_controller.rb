@@ -1,4 +1,4 @@
-class DancerMostCompetitionsController < ApplicationController
+class DancersMostCompetitionsController < ApplicationController
   def index
     boys = Couple.select("couples.boy_id as id, count(couples.boy_id) as total")
       .joins(:entries).group('boy_id').order('total DESC')
