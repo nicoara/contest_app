@@ -1,8 +1,9 @@
 class InternationalCouplesController < ApplicationController
   def index
-    @lst_couples = Couple.select(:id)
+    @lst_couples = Couple
       .joins("LEFT JOIN dancers as d ON couples.boy_id = d.id")
       .joins("LEFT JOIN dancers as d1 ON couples.girl_id = d1.id")
       .where("d.country != d1.country")
+      .select(:id)
   end
 end
