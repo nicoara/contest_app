@@ -5,9 +5,14 @@
 <p>Country with most couples at competitions </p>
 </br>
 
-<% if defined? @country %>
-  <p>Country: <%= @country %></p>
-  <p>has <%= @nr_dancers %> dancers </p>
+
+<p>Countries with most couples at competitions, <%= @nr_dancers %> : </p>
+<% @countries_most_couples_competitions.each do |country|%>
+  <li id='<%= country.name %>'>
+    <p>
+      <%= country.name %>
+    </p>
+  </li>
 <% end %>
 
 
