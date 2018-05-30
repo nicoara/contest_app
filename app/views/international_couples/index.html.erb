@@ -9,9 +9,12 @@ Couples with dancers from different countries
 </br>
 
 <% @lst_couples.each do |couple| %>
-  <li>
+  <li id='<%= couple.id %>'>
     <p>
-        id: <%= couple.id %>
+        M: <%= couple.boy_name%>
+        <%= link_to 'show', dancer_path(couple.boy_id) %>
+        F: <%= couple.girl_name %>
+        <%= link_to 'show', dancer_path(couple.girl_id) %>
     </p>
   </li>
 <% end %>
