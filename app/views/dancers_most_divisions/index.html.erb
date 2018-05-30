@@ -7,9 +7,12 @@
 
 <p>most number of divisions: <%= @max_divisions %> </p>
 <p>dancers:</p>
-<% @dancers_most_divisions.each do |dancer_id|%>
-  <li id='<%= dancer_id %>'>
-      id: <%= dancer_id %>
+<% @dancers_most_divisions.each do |dancer|%>
+  <li id='<%= dancer.id %>'>
+    <p>
+      <%= dancer.name %>
+      <%= link_to 'show', dancer_path(dancer.id) %>
+    </p>
   </li>
 <% end %>
 
