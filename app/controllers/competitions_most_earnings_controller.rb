@@ -1,4 +1,4 @@
-class CompetitionMostEarningsController < ApplicationController
+class CompetitionsMostEarningsController < ApplicationController
   def index
     most_earnings = Entry
       .joins(:competition)

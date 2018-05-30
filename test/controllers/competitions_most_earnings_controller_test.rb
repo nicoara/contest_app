@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CompetitionMostEarningsControllerTest < ActionDispatch::IntegrationTest
+class CompetitionsMostEarningsControllerTest < ActionDispatch::IntegrationTest
   setup do
     boy = create(:boy)
     girl = create(:girl)
@@ -20,7 +20,7 @@ class CompetitionMostEarningsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show correct competition with most earnings" do
-    get competition_most_earnings_url
+    get competitions_most_earnings_url
     assert_response :success
     assert_select 'li', count: 2
     assert_select "li[id='"+@competition_expensive.id.to_s+"']"
@@ -28,7 +28,7 @@ class CompetitionMostEarningsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not show incorrect competition with most earnings" do
-    get competition_most_earnings_url
+    get competitions_most_earnings_url
     assert_response :success
     assert_select "li[id='"+@competition_cheap.id.to_s+"']", count: 0
   end
