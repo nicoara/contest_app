@@ -7,10 +7,5 @@
 </br>
 
 <% @lst_dancers.each do |dancer| %>
-  <li id='<%= dancer.id %>'>
-    <p>
-      <%= dancer.name %>
-      <%= link_to 'show', dancer_path(dancer.id) %>
-    </p>
-  </li>
+  <%= render partial: 'shared/dancer_basic_info', locals: {dancer: dancer} %>
 <% end %>

@@ -8,11 +8,6 @@
 <p>most number of age sections: <%= @max_age_sections %> </p>
 <p>dancers:</p>
 <% @dancers_most_age_sections.each do |dancer|%>
-  <li id='<%= dancer.id %>'>
-    <p>
-      <%= dancer.name %>
-      <%= link_to 'show', dancer_path(dancer.id) %>
-    </p>
-  </li>
+  <%= render partial: 'shared/dancer_basic_info', locals: {dancer: dancer} %>
 <% end %>
 
