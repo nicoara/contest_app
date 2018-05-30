@@ -7,9 +7,12 @@
 
 <p>most number of age sections: <%= @max_age_sections %> </p>
 <p>dancers:</p>
-<% @dancers_most_age_sections.each do |dancer_id|%>
-  <li id='<%= dancer_id %>'>
-      id: <%= dancer_id %>
+<% @dancers_most_age_sections.each do |dancer|%>
+  <li id='<%= dancer.id %>'>
+    <p>
+      <%= dancer.name %>
+      <%= link_to 'show', dancer_path(dancer.id) %>
+    </p>
   </li>
 <% end %>
 
