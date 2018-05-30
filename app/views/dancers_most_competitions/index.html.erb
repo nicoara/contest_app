@@ -4,25 +4,17 @@
 </br>
 <p>Dancer with most competitions</p>
 </br>
-</br>
 
-<% @dancers_most_entries.each do |dancer_id|%>
-  <li id='<%= dancer_id %>'>
-      <p>
-    <%= Dancer.find(dancer_id).name %>
-  </p>
-  <p>
-    was in couples:
-    <% Couple.where(boy_id: dancer_id).each do |couple| %>
-      <%= couple.id%>
-    <% end %>
-    <% Couple.where(girl_id: dancer_id).each do |couple| %>
-      <%= couple.id%>
-    <% end %>
-  </p>
-  <p>
-    has <%= @max_entries %> entries in competitions
-  </p>
+<p>
+  dancers with the most entries in competitions, <%= @max_entries %> :
+</p>
+
+<% @dancers_most_entries.each do |dancer|%>
+  <li id='<%= dancer.id %>'>
+    <p>
+      <%= dancer.name %>
+      <%= link_to 'show', dancer_path(dancer.id) %>
+    </p>
   </li>
 <% end %>
 
