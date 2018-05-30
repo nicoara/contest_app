@@ -5,7 +5,12 @@
 <p>Competition with most earnings</p>
 </br>
 
-<% if defined? @competition_id %>
-  <p>Competition id: <%= @competition_id %></p>
-  <p>has earnings of <%= @earnings %> </p>
+<p>Competitions with most earnings, of <%= @earnings %>: </p>
+
+<% @competitions_most_earnings.each do |competition|%>
+  <li id='<%= competition.id %>'>
+    <p>
+      <%= competition.name %>
+    </p>
+  </li>
 <% end %>
