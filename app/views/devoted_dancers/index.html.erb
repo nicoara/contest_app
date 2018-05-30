@@ -7,9 +7,10 @@
 </br>
 
 <% @lst_dancers.each do |dancer| %>
-  <li>
+  <li id='<%= dancer.id %>'>
     <p>
-      id: <%= dancer.id %>
+      <%= dancer.name %>
+      <%= link_to 'show', dancer_path(dancer.id) %>
     </p>
   </li>
 <% end %>
