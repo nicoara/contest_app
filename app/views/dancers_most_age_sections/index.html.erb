@@ -8,8 +8,8 @@
 <p>most number of age sections: <%= @max_age_sections %> </p>
 <p>dancers:</p>
 <% @dancers_most_age_sections.each do |dancer_id|%>
-  <p>
+  <li id='<%= dancer_id %>'>
       id: <%= dancer_id %>
-  </p>
+  </li>
 <% end %>
 
