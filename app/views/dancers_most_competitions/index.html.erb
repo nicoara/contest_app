@@ -7,10 +7,8 @@
 </br>
 
 <% @dancers_most_entries.each do |dancer_id|%>
-  <p>
-      id: <%= dancer_id %>
-  </p>
-  <p>
+  <li id='<%= dancer_id %>'>
+      <p>
     <%= Dancer.find(dancer_id).name %>
   </p>
   <p>
@@ -25,5 +23,6 @@
   <p>
     has <%= @max_entries %> entries in competitions
   </p>
+  </li>
 <% end %>
 
