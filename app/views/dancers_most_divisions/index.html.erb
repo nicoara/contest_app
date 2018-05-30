@@ -8,8 +8,8 @@
 <p>most number of divisions: <%= @max_divisions %> </p>
 <p>dancers:</p>
 <% @dancers_most_divisions.each do |dancer_id|%>
-  <p>
+  <li id='<%= dancer_id %>'>
       id: <%= dancer_id %>
-  </p>
+  </li>
 <% end %>
 
