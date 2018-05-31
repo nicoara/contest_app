@@ -13,8 +13,8 @@ class DancerSlowestDivisionsControllerTest < ActionDispatch::IntegrationTest
     @couple_4 = create(:couple, boy_id: boy_2.id, girl_id: girl_3.id)
 
     @competition = create(:competition)
-    @division_weaker = create(:division, ranking: 1)
-    @division_stronger = create(:division, ranking: 3)
+    @weaker_division = create(:division)
+    @stronger_division = create(:division)
     @age_section = create(:age_section)
 
   end
@@ -22,15 +22,15 @@ class DancerSlowestDivisionsControllerTest < ActionDispatch::IntegrationTest
   test "should show correct slowest dancers through divisions " do
     one_year_ago = 1.year.ago
     create(:entry, couple_id: @couple_1.id, competition_id: @competition.id,
-                      division_id: @division_stronger.id, age_section_id: @age_section.id)
+                      division_id: @stronger_division.id, age_section_id: @age_section.id)
     create(:entry, couple_id: @couple_2.id, competition_id: @competition.id,
-                      division_id: @division_weaker.id, age_section_id: @age_section.id,
+                      division_id: @weaker_division.id, age_section_id: @age_section.id,
                       created_at: one_year_ago)
     create(:entry, couple_id: @couple_3.id, competition_id: @competition.id,
-                      division_id: @division_weaker.id, age_section_id: @age_section.id,
+                      division_id: @weaker_division.id, age_section_id: @age_section.id,
                       created_at: one_year_ago)
     create(:entry, couple_id: @couple_4.id, competition_id: @competition.id,
-                      division_id: @division_stronger.id, age_section_id: @age_section.id,
+                      division_id: @stronger_division.id, age_section_id: @age_section.id,
                       created_at: 4.years.ago) #testing for negative evolution for boy_2
 
     get dancer_slowest_divisions_url
@@ -42,9 +42,9 @@ class DancerSlowestDivisionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show correct dancer when all dancers in only one competition" do
     create(:entry, couple_id: @couple_1.id, competition_id: @competition.id,
-                      division_id: @division_stronger.id, age_section_id: @age_section.id)
+                      division_id: @stronger_division.id, age_section_id: @age_section.id)
     create(:entry, couple_id: @couple_2.id, competition_id: @competition.id,
-                      division_id: @division_stronger.id, age_section_id: @age_section.id)
+                      division_id: @stronger_division.id, age_section_id: @age_section.id)
 
     get dancer_slowest_divisions_url
     assert_response :success
