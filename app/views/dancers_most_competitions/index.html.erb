@@ -5,9 +5,8 @@
 <p>Dancer with most competitions</p>
 </br>
 
-<p>
-  dancers with the most entries in competitions, <%= @max_entries %> :
-</p>
+<p> most entries in competitions: <%= @max_entries %> </p>
+<p>dancers:</p>
 
 <% @dancers_most_entries.each do |dancer|%>
   <%= render partial: 'shared/dancer_basic_info', locals: {dancer: dancer} %>

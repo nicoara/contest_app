@@ -2,11 +2,13 @@
 
 </br>
 </br>
-<p>Country with most couples at competitions </p>
+<p>Countries with most couples at competitions </p>
 </br>
 
 
-<p>Countries with most couples at competitions, <%= @nr_dancers %> : </p>
+<p>most couples at competitions: <%= @nr_dancers %> </p>
+<p>countries:</p>
+
 <% @countries_most_couples_competitions.each do |country|%>
   <li id='<%= country.name %>'>
     <p>
