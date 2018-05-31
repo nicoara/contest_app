@@ -24,13 +24,13 @@ class DancersMostCompetitionsControllerTest < ActionDispatch::IntegrationTest
     get dancers_most_competitions_url
     assert_response :success
     assert_select 'li', count: 2
-    assert_select "li[id='"+@boy_most_competitions.id.to_s+"']"
-    assert_select "li[id='"+@girl_most_competitions.id.to_s+"']"
+    assert_select "li[id='#{@boy_most_competitions.id.to_s}']"
+    assert_select "li[id='#{@girl_most_competitions.id.to_s}']"
   end
 
   test "should not show incorrect dancer with most competitions" do
     get dancers_most_competitions_url
     assert_response :success
-    assert_select "li[id='"+@girl.id.to_s+"']", count: 0
+    assert_select "li[id='#{@girl.id.to_s}']", count: 0
   end
 end

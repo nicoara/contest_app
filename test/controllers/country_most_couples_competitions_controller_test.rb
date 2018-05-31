@@ -27,13 +27,13 @@ class CountryMostCouplesCompetitionsControllerTest < ActionDispatch::Integration
     get country_most_couples_competitions_url
     assert_response :success
     assert_select 'li', count: 2
-    assert_select "li[id='"+@boy_germany.country.to_s+"']"
-    assert_select "li[id='"+@boy_italy.country.to_s+"']"
+    assert_select "li[id='#{@boy_germany.country.to_s}']"
+    assert_select "li[id='#{@boy_italy.country.to_s}']"
   end
 
   test "should not show incorrect country with most couples at competitions" do
     get country_most_couples_competitions_url
     assert_response :success
-    assert_select "li[id='"+@boy_romania.country.to_s+"']", count: 0
+    assert_select "li[id='#{@boy_romania.country.to_s}']", count: 0
   end
 end

@@ -28,7 +28,7 @@ class AvgYearlyCoupleCompetitionsControllerTest < ActionDispatch::IntegrationTes
     get avg_yearly_couple_competitions_url
     assert_response :success
     assert_select 'li', count: 2
-    assert_select "li[id='"+@couple.id.to_s+"-0.6667']"
-    assert_select "li[id='"+@couple_2.id.to_s+"-0.3333']"
+    assert_select "li[id='#{@couple.id.to_s}-0.6667']"
+    assert_select "li[id='#{@couple_2.id.to_s}-0.3333']"
   end
 end

@@ -15,13 +15,13 @@ class InternationalCouplesControllerTest < ActionDispatch::IntegrationTest
     get international_couples_url
     assert_response :success
     assert_select 'li', count: 2
-    assert_select "li[id='"+@couple_diff_country.id.to_s+"']"
-    assert_select "li[id='"+@couple_diff_country_2.id.to_s+"']"
+    assert_select "li[id='#{@couple_diff_country.id.to_s}']"
+    assert_select "li[id='#{@couple_diff_country_2.id.to_s}']"
   end
 
   test "should not show incorrect couple on query couple diff countries" do
     get international_couples_url
     assert_response :success
-    assert_select "li[id='"+@couple_same_country.id.to_s+"']", count: 0
+    assert_select "li[id='#{@couple_same_country.id.to_s}']", count: 0
   end
 end

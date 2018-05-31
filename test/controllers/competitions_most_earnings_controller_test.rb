@@ -23,13 +23,13 @@ class CompetitionsMostEarningsControllerTest < ActionDispatch::IntegrationTest
     get competitions_most_earnings_url
     assert_response :success
     assert_select 'li', count: 2
-    assert_select "li[id='"+@competition_expensive.id.to_s+"']"
-    assert_select "li[id='"+@competition_expensive_2.id.to_s+"']"
+    assert_select "li[id='#{@competition_expensive.id.to_s}']"
+    assert_select "li[id='#{@competition_expensive_2.id.to_s}']"
   end
 
   test "should not show incorrect competition with most earnings" do
     get competitions_most_earnings_url
     assert_response :success
-    assert_select "li[id='"+@competition_cheap.id.to_s+"']", count: 0
+    assert_select "li[id='#{@competition_cheap.id.to_s}']", count: 0
   end
 end

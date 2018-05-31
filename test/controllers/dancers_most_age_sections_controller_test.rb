@@ -26,13 +26,13 @@ class DancersMostAgeSectionsControllerTest < ActionDispatch::IntegrationTest
     get dancers_most_age_sections_url
     assert_response :success
     assert_select 'li', count: 2
-    assert_select "li[id='"+@boy_most_age_sections.id.to_s+"']"
-    assert_select "li[id='"+@girl_most_age_sections.id.to_s+"']"
+    assert_select "li[id='#{@boy_most_age_sections.id.to_s}']"
+    assert_select "li[id='#{@girl_most_age_sections.id.to_s}']"
   end
 
   test "should not show incorrect dancer with most age sections" do
     get dancers_most_age_sections_url
     assert_response :success
-    assert_select "li[id='"+@girl_2.id.to_s+"']", count: 0
+    assert_select "li[id='#{@girl_2.id.to_s}']", count: 0
   end
 end
