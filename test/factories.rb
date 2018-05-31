@@ -33,7 +33,7 @@ FactoryBot.define do
 
   factory :division do
     name    'Professional'
-    ranking  1
+    sequence(:ranking)
   end
 
   factory :age_section do
