@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :avg_yearly_couple_competitions, only: [:index]
   resources :country_most_couples_competitions, only: [:index]
   resources :competitions_most_earnings, only: [:index]
+  resources :dancer_slowest_divisions, only: [:index]
   resources :data, only: [:index]
   resources :couples
   resources :dancers

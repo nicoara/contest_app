@@ -1,0 +1,15 @@
+<%= render 'shared/header' %>
+
+</br>
+</br>
+<p>Dancers with slowest journey through divisions</p>
+</br>
+
+<% @slowest_dancers.each do |dancer|%>
+  <li id='<%= dancer.id %>'>
+    <p>
+        M: <%= dancer.name%>
+        <%= link_to 'show', dancer_path(dancer.id) %>
+    </p>
+  </li>
+<% end %>
