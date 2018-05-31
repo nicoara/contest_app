@@ -6,6 +6,6 @@
 </p>
 </br>
 
-<% @lst_dancers.each do |dancer| %>
+<% @dancers.each do |dancer| %>
   <%= render partial: 'shared/dancer_basic_info', locals: {dancer: dancer} %>
 <% end %>

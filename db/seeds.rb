@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 countries = ['Germany', 'Italy', 'Poland', 'Austria', 'Romania', 'Russia', 'Japan'];
-lst_currencies = ['USD', 'EUR', 'RON', 'YEN', 'SEK']
+currencies = ['USD', 'EUR', 'RON', 'YEN', 'SEK']
 prng = Random.new
 nr_couples = 5000
 
@@ -40,13 +40,13 @@ puts 'ended adding Dancers'
 puts Time.now
 
 nr_couples.times do |n|
-  lst_boyid = Dancer.where(is_boy: true).select(:id)
-  index_boy = prng.rand(lst_boyid.length)
-  lst_girlid = Dancer.where(is_boy: false).select(:id)
-  index_girl = prng.rand(lst_girlid.length)
+  boy_ids = Dancer.where(is_boy: true).select(:id)
+  index_boy = prng.rand(boy_ids.length)
+  girl_ids = Dancer.where(is_boy: false).select(:id)
+  index_girl = prng.rand(girl_ids.length)
 
-  Couple.create(boy_id: lst_boyid[index_boy].id,
-    girl_id: lst_girlid[index_girl].id)
+  Couple.create(boy_id: boy_ids[index_boy].id,
+    girl_id: girl_ids[index_girl].id)
 
   if (Couple.count % 300 == 0)
     puts "#{Couple.count} couples"
@@ -61,14 +61,14 @@ puts Time.now
   date = Date.today + rand(365)
   country_id = prng.rand(countries.length)
   price = prng.rand(500)
-  currency_index = prng.rand(lst_currencies.length)
+  currency_index = prng.rand(currencies.length)
   max_couples = 6 + prng.rand(6)
 
   Competition.create!(name: name,
     date: date,
     country: countries[country_id],
     price: price,
-    currency: lst_currencies[currency_index],
+    currency: currencies[currency_index],
     max_couples_on_floor: max_couples)
 end
 

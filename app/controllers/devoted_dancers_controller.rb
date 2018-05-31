@@ -10,6 +10,6 @@ class DevotedDancersController < ApplicationController
       .group('girl_id')
       .having('count(girl_id)=1')
       .select('girl_id as id, dancers.name as name')
-    @lst_dancers = [boys , girls].flatten
+    @dancers = [boys , girls].flatten
   end
 end
