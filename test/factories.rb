@@ -18,8 +18,8 @@ FactoryBot.define do
   end
 
   factory :couple do
-    association :boy_id, factory: :dancer
-    association :girl_id, factory: :dancer
+    association :boy, factory: :boy
+    association :girl, factory: :girl
   end
 
   factory :competition do
@@ -41,10 +41,10 @@ FactoryBot.define do
   end
 
   factory :entry do
-    association :couple_id, factory: :couple, id: 1
-    association :competition_id, factory: :competition, id: 1
-    association :division_id, factory: :division, id: 1
-    association :age_section_id, factory: :age_section, id: 1
+    association :couple
+    association :competition
+    association :division
+    association :age_section
   end
 end
 
