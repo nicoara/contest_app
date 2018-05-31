@@ -68,7 +68,6 @@ class DancerSlowestDivisionsController < ApplicationController
           end
         end
       end
-      puts '------slowest_dancer_ids', slowest_dancer_ids
       return slowest_dancer_ids
     end
 
