@@ -1,28 +1,16 @@
 class AvgYearlyCoupleCompetitionsController < ApplicationController
   def index
-    couple_yearly_competitions = {}
-
-    Entry.all.each do |entry|
-      if couple_yearly_competitions.key?(entry.couple_id)
-        if couple_yearly_competitions[entry.couple_id].key?(entry.created_at.year)
-          couple_yearly_competitions[entry.couple_id][entry.created_at.year] += 1
-        else
-          couple_yearly_competitions[entry.couple_id][entry.created_at.year] = 1
-        end
-      else
-        couple_yearly_competitions[entry.couple_id] = { entry.created_at.year => 1}
-      end
-    end
+    @couple_dancers = Couple
+      .joins("LEFT JOIN dancers as d ON couples.boy_id = d.id")
+      .joins("LEFT JOIN dancers as d1 ON couples.girl_id = d1.id")
+      .select('couples.id as id, d.name as boy_name, d.id as boy_id, d1.name as girl_name, d1.id as girl_id')
 
     @couple_avg_yearly_competitions = {}
-    couple_yearly_competitions.each do |couple_id, competitions_couple|
-      total_competitions = 0
-      competitions_couple.each do |year, competitions|
-        total_competitions += competitions
+    Entry.all.each do |entry|
+      if entry.created_at >= 36.months.ago
+        @couple_avg_yearly_competitions[entry.couple_id] = @couple_avg_yearly_competitions.key?(entry.couple_id) ?
+          @couple_avg_yearly_competitions[entry.couple_id] + 1 : 1
       end
-      total_competitions /= (competitions_couple.length).to_f
-      @couple_avg_yearly_competitions[couple_id] = total_competitions
     end
-
   end
 end
