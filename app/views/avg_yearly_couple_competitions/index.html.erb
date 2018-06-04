@@ -5,18 +5,16 @@
 <p>Average yearly competitions per couple, in the past 3 years: </p>
 </br>
 
-<% @couple_dancers.each do |couple|%>
-  <% if @couple_avg_yearly_competitions.key?(couple.id)%>
-    <li id='<%= couple.id %>-<%= '%.4f' % (@couple_avg_yearly_competitions[couple.id] / 3.0) %>'>
+<% @couple_avg_yearly_competitions.each do |couple|%>
+    <li id='<%= couple.id %>-<%= '%.4f' % (couple.total / 3.0) %>'>
       <p>
         M: <%= couple.boy_name%>
         <%= link_to 'show', dancer_path(couple.boy_id) %>
         F: <%= couple.girl_name %>
         <%= link_to 'show', dancer_path(couple.girl_id) %>
-        avg: <%= '%.4f' % (@couple_avg_yearly_competitions[couple.id] / 3.0) %>
+        avg: <%= '%.4f' % (couple.total / 3.0) %>
       </p>
     </li>
-  <% end %>
 <% end %>
 
 
